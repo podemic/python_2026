@@ -53,22 +53,37 @@ from enum import unique
 import numbers
 
 
-def second_lagest_number(num):
-    unique_numbers = list(set(num))
-    if len(unique_numbers) < 2:
-        raise ValueError ("Во входном списке должно быть хотя бы 2 числа!")
+# def second_lagest_number(num):
+#     unique_numbers = list(set(num))
+#     if len(unique_numbers) < 2:
+#         raise ValueError ("Во входном списке должно быть хотя бы 2 числа!")
 
-    unique_numbers.sort() # сортируем по названию
-    return unique_numbers[-2] # второе с конца - второе по величение число
+#     unique_numbers.sort() # сортируем по названию
+#     return unique_numbers[-2] # второе с конца - второе по величение число
 
-user_input = input("Введите числа через пробел :  ")
-numbers = list(map(int,user_input.split()))
+# user_input = input("Введите числа через пробел :  ")
+# numbers = list(map(int,user_input.split()))
 
-try:    
-    result = second_lagest_number(numbers)
-    print("Второе по величение число:", result)
-except ValueError as e:
-    print(f"Хуй моржовый", e)
+# try:    
+#     result = second_lagest_number(numbers)
+#     print("Второе по величение число:", result)
+# except ValueError as e:
+#     print(f"Хуй моржовый", e)
+
+
+def sum_of_odd_numbers(count):
+    total = 0
+    for i in range(count):
+        num = int(input(f"Введите число {i + 1}: "))
+        if num % 2 != 0:          # если число нечётное
+            total += num
+    return total
+
+
+# пример использования
+n = int(input("Сколько чисел будете вводить? "))
+result = sum_of_odd_numbers(n)
+print("Сумма нечётных чисел:", result)
 
 
 
